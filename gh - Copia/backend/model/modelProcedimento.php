@@ -31,7 +31,18 @@ class modelProcedimento
         try {
             $pdo = Database::conexao();
             $prepare = $pdo->prepare("UPDATE tbl_tipos_procedimento SET descricao_procedimento = :descricao_procedimento WHERE id_tipos_procedimento = :id_tipos_procedimento");
+            $prepare->bindParam(":descricao_procedimento", $descricao_procedimento);
+            $prepare->execute();
 
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    public function deletarProcedimentos() {
+        try {
+            $pdo = Database::conexao();
 
 
 
@@ -39,9 +50,5 @@ class modelProcedimento
         } catch (PDOException $e) {
             
         }
-    }
-
-    public function deletarProcedimentos() {
-
     }
 }
