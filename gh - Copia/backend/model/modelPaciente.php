@@ -1,8 +1,10 @@
 <?php
 
-class modelPaciente {
+class modelPaciente
+{
 
-    public function listarPacientes() {
+    public function listarPacientes()
+    {
         try {
             $pdo = Database::conexao();
             $sql = $pdo->query("SELECT * FROM tbl_pacientes");
@@ -13,7 +15,8 @@ class modelPaciente {
         }
     }
 
-    public function cadastrarPaciente($dados) {
+    public function cadastrarPaciente($dados)
+    {
         try {
             $pdo = Database::conexao();
             $sql = $pdo->prepare("INSERT INTO tbl_pacientes (nome, sobrenome, email, cep, logradouro, numero, bairro, cidade, uf, id_status) 
@@ -25,7 +28,8 @@ class modelPaciente {
         }
     }
 
-    public function atualizarPaciente($dados) {
+    public function atualizarPaciente($dados)
+    {
         try {
             $pdo = Database::conexao();
             $sql = $pdo->prepare("UPDATE tbl_pacientes 
@@ -40,7 +44,8 @@ class modelPaciente {
         }
     }
 
-    public function excluirPaciente($id_paciente) {
+    public function excluirPaciente($id_paciente)
+    {
         try {
             $pdo = Database::conexao();
             $sql = $pdo->prepare("DELETE FROM tbl_pacientes WHERE id_paciente = :id_paciente");
@@ -52,4 +57,3 @@ class modelPaciente {
         }
     }
 }
-?>

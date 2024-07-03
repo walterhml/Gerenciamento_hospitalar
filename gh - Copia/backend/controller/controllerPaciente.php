@@ -4,9 +4,11 @@
 require_once 'backend/model/modelPaciente.php';
 
 
-class controllerPaciente {
+class controllerPaciente
+{
 
-    public function listarPacientes() {
+    public function listarPacientes()
+    {
         try {
             $modelPaciente = new modelPaciente();
             return $modelPaciente->listarPacientes();
@@ -15,7 +17,8 @@ class controllerPaciente {
         }
     }
 
-    public function cadastrarPaciente($id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status) {
+    public function cadastrarPaciente($id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status)
+    {
         try {
             $modelPaciente = new modelPaciente();
             return $modelPaciente->cadastrarPaciente($id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status);
@@ -24,7 +27,8 @@ class controllerPaciente {
         }
     }
 
-    public function atualizarPaciente($id_paciente, $id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status) {
+    public function atualizarPaciente($id_paciente, $id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status)
+    {
         try {
             $modelPaciente = new modelPaciente();
             return $modelPaciente->atualizarPaciente($id_paciente, $id_prontuario, $nome, $sobrenome, $email, $cep, $logradouro, $numero, $bairro, $cidade, $uf, $id_status);
@@ -33,7 +37,8 @@ class controllerPaciente {
         }
     }
 
-    public function excluirPaciente($id_paciente) {
+    public function excluirPaciente($id_paciente)
+    {
         try {
             $modelPaciente = new modelPaciente();
             return $modelPaciente->excluirPaciente($id_paciente);
